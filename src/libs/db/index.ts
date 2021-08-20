@@ -1,11 +1,11 @@
-import AWS from "aws-sdk";
+import DynamoDB from "aws-sdk/clients/dynamodb";
 import { DocumentClient } from "aws-sdk/clients/dynamodb";
 
 export const initDB = (): DocumentClient => {
   if (process.env.STAGE === "local")
-    return new AWS.DynamoDB.DocumentClient({
+    return new DynamoDB.DocumentClient({
       region: process.env.REGION,
       endpoint: process.env.LOCALHOST,
     });
-  else return new AWS.DynamoDB.DocumentClient();
+  else return new DynamoDB.DocumentClient();
 };
