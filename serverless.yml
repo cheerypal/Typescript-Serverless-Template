@@ -1,5 +1,4 @@
-service:
-  name: serverlesss-template
+service: serverlesss-template
 
 plugins:
   - serverless-offline
@@ -13,7 +12,6 @@ provider:
   name: aws
   runtime: nodejs14.x
   memorySize: 256
-  frameworkVersion: ‘1.64.1’
   stage: ${opt:stage, 'local'} #dev/prd
   region: eu-west-1
 
