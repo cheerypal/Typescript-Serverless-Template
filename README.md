@@ -63,7 +63,7 @@ dynamodb-admin
 - source-map-support: ^0.5.19,
 - uuid: ^8.3.2
 
-## Dev Deps
+## Dev Dependencies
 
 - @serverless/typescript: ^2.23.0,
 - @types/aws-lambda: ^8.10.71,
