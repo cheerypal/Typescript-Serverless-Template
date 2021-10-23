@@ -104,6 +104,6 @@ dist
 .tern-port
 
 
-#.npmignore
-#.nvmrc
+.npmignore
+.nvmrc
 package-lock.json

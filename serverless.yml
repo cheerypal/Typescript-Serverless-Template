@@ -1,19 +1,21 @@
-service: serverlesss-template
+service: serverless-template
 
 plugins:
   - serverless-offline
   - serverless-webpack
   - serverless-iam-roles-per-function
-  - serverless-create-global-dynamodb-table
   - serverless-prune-plugin
-  - serverless-dynamodb-local
+  # - serverless-create-global-dynamodb-table
+  # - serverless-dynamodb-local
 
 provider:
   name: aws
   runtime: nodejs14.x
   memorySize: 256
-  stage: ${opt:stage, 'local'} #dev/prd
+  stage: dev #dev/prd
   region: eu-west-1
+  lambdaHashingVersion: 20201221
+  
 
   #iamRoleStatements:
   #
@@ -22,7 +24,7 @@ provider:
     #
     STAGE: ${self:provider.stage}
     REGION: ${self:provider.region}
-    LOCALHOST: http://localhost:8000
+    # LOCALHOST: http://localhost:8000
 
 #resources:
 # Resources:
@@ -40,10 +42,10 @@ custom:
     number: 3
 
   # local dynamodb server
-  dynamodb:
-    stages:
-      - local
-    start:
-      port: 8000
-      migrate: true
-      seed: true
+  # dynamodb:
+  #   stages:
+  #     - local
+  #   start:
+  #     port: 8000
+  #     migrate: true
+  #     seed: true

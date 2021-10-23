@@ -3,6 +3,8 @@
     "baseUrl": ".",
     "paths": {
       "@functions/*": ["src/libs/functions/*"],
+      "@middleware/*":["src/libs/middleware/*"],
+      "@db/*":["src/libs/db/*"],
       "@libs/*": ["src/libs/*"]
     }
   }
