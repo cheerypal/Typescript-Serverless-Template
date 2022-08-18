@@ -107,3 +107,5 @@ dist
 .npmignore
 .nvmrc
 package-lock.json
+.webpack/
+.vscode/

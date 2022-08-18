@@ -1,12 +1,10 @@
 service: serverless-template
 
 plugins:
-  - serverless-offline
   - serverless-webpack
   - serverless-iam-roles-per-function
   - serverless-prune-plugin
-  # - serverless-create-global-dynamodb-table
-  # - serverless-dynamodb-local
+  
 
 provider:
   name: aws
@@ -15,22 +13,14 @@ provider:
   stage: dev #dev/prd
   region: eu-west-1
   lambdaHashingVersion: 20201221
-  
-
-  #iamRoleStatements:
-  #
 
   environment:
-    #
     STAGE: ${self:provider.stage}
     REGION: ${self:provider.region}
-    # LOCALHOST: http://localhost:8000
+    # Table Names Below
 
-#resources:
-# Resources:
-#
 
-#functions: ${file(src/handlers/index.yml):Handlers}
+# functions: ${file(src/handlers/index.yml):Handlers}
 
 custom:
   webpack:
@@ -40,12 +30,3 @@ custom:
   prune: # automatically prune old lambda versions
     automatic: true
     number: 3
-
-  # local dynamodb server
-  # dynamodb:
-  #   stages:
-  #     - local
-  #   start:
-  #     port: 8000
-  #     migrate: true
-  #     seed: true
