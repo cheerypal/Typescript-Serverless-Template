@@ -20,7 +20,7 @@ provider:
     # Table Names Below
 
 
-# functions: ${file(src/handlers/index.yml):Handlers}
+functions: ${file(src/handlers/index.yml):Handlers}
 
 custom:
   webpack:
